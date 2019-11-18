@@ -1,7 +1,6 @@
 import React from "react";
 import { Text, StyleSheet, View, Button, TextInput, Alert } from "react-native";
 import * as ImagePicker from "expo-image-picker";
-import Constants from "expo-constants";
 import * as Permissions from "expo-permissions";
 import { FirebaseWrapper } from "../firebase/firebasee";
 
@@ -23,12 +22,10 @@ export default class Signup extends React.Component {
   }
 
   getPermissionAsync = async () => {
-    if (Constants.platform.ios) {
-      const { status } = await Permissions.askAsync(Permissions.CAMERA);
-      const { status2 } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-      if (status !== "granted" && status2 !== "granted") {
-        alert("Sorry, we need camera permissions to make this work!");
-      }
+    const { status } = await Permissions.askAsync(Permissions.CAMERA);
+    const { status2 } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+    if (status !== "granted" && status2 !== "granted") {
+      alert("Sorry, we need camera permissions to make this work!");
     }
   };
 
@@ -167,7 +164,7 @@ const styles = StyleSheet.create({
   titleContainer: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center"
+    marginTop: "10%"
   },
   input: {
     marginTop: "5%"

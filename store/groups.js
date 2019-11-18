@@ -4,7 +4,7 @@ const GOTALLGROUPS = "GOTALLGROUPS";
 
 const gotAllGroups = groups => ({ type: GOTALLGROUPS, groups });
 
-export default allUsersReducer = (state = [], action) => {
+export default allGroupsReducer = (state = [], action) => {
   switch (action.type) {
     case GOTALLGROUPS:
       return action.groups;

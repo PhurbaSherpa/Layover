@@ -12,6 +12,7 @@ import SignupScreen from "../screens/SignupScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import GroupsScreen from "../screens/GroupsScreen";
 import ConnectScreen from "../screens/ConnectScreen";
+import GlobalChatScreen from "../screens/GlobalChatScreen";
 import Icon from "../components/Icon";
 
 const config = Platform.select({
@@ -47,6 +48,21 @@ ConnectStack.navigationOptions = {
 
 ConnectStack.path = "";
 
+const GlobalStack = createStackNavigator(
+  {
+    Global: GlobalChatScreen
+  },
+  config
+);
+
+GlobalStack.navigationOptions = {
+  header: "Chat",
+  tabBarLabel: "Global",
+  tabBarIcon: () => <Icon name="user" size={30} />
+};
+
+GlobalStack.path = "";
+
 const GroupsStack = createStackNavigator(
   {
     Groups: GroupsScreen
@@ -78,6 +94,7 @@ SettingsStack.path = "";
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   GroupsStack,
+  GlobalStack,
   ConnectStack,
   SettingsStack
 });

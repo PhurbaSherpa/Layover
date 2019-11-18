@@ -5,11 +5,13 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import singleUser from "./singleUser";
 import allUsers from "./alluser";
 import allGroups from "./groups";
+import allMessages from "./messages";
 
 const rootReducer = combineReducers({
   singleUser,
   allUsers,
-  allGroups
+  allGroups,
+  allMessages
 });
 
 const middleware = composeWithDevTools(

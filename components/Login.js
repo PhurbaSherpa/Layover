@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   titleContainer: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center"
+    marginTop: "30%"
   },
   input: {
     marginTop: "5%"
